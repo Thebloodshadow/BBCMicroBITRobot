@@ -1,5 +1,6 @@
 #################################
 # This code was made by Vortezz #
+# and edited by Thebloodshadow  #
 # NOTICE : Some value has to be #
 #   edited before utilisation   #
 #################################
@@ -8,28 +9,40 @@ from microbit import *
 
 display.off()
 
-def command_mot1 (direction, speed):
-    pin8.write_digital(direction)
-    pin1.write_analog(speed)
+def commande_mot1(sens, vitesse):
+    pin8.write_digital(sens)
+    pin1.write_analog(vitesse)
 
-def command_mot2 (direction, speed):
-    pin12.write_digital(direction)
-    pin2.write_analog(speed)
+def commande_mot2(sens, vitesse):
+    pin12.write_digital(sens)
+    pin2.write_analog(vitesse)
+
+def forward():
+    commande_mot1(0, 512)
+    commande_mot2(1, 512)
+
+def stop():
+    commande_mot1(0, 0)
+    commande_mot2(1, 0)
+
+def left():
+    commande_mot1(0, 512) #I don't know if this is really left since i don't know in wich order are the motors
+    commande_mot2(1, 0)   #You may need to change left and right if your robot is not rotating in the direction it should
+
+def right():              #I don't know if this is really right since i don't know in wich order are the motors
+    commande_mot1(0, 0)   #You may need to change left and right if your robot is not rotating in the direction it should
+    commande_mot2(1, 512)
 
 while True:
+
     if pin7.read_digital() and pin6.read_digital():
-        command_mot1 (0, 0)
-        command_mot2 (1, 0)
+        forward()
 
     elif pin6.read_digital():
-        command_mot1 (0, 0)
-        command_mot2 (1, 512)
-
+        left()
 
     elif pin7.read_digital():
-        command_mot1 (1, 512)
-        command_mot2 (0, 0)
+        right()
 
     else:
-        command_mot1 (1, 512)
-        command_mot2 (1, 512)
+      stop()
