@@ -26,11 +26,11 @@ def stop():
     command_mot2(1, 0)
 
 def left():
-    command_mot1(0, 512) #I don't know if this is really left since i don't know in wich order are the motors
-    command_mot2(1, 0)   #You may need to change left and right if your robot is not rotating in the direction it should
+    command_mot1(0, 512)
+    command_mot2(1, 0)
 
-def right():              #I don't know if this is really right since i don't know in wich order are the motors
-    command_mot1(0, 0)   #You may need to change left and right if your robot is not rotating in the direction it should
+def right():
+    command_mot1(0, 0)
     command_mot2(1, 512)
 
 while True:
@@ -45,4 +45,4 @@ while True:
         right()
 
     else:
-      stop()
+        stop()
