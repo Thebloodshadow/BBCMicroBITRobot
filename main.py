@@ -10,12 +10,12 @@ from microbit import *
 display.off()
 
 def commande_mot1(direction, speed):
-    pin8.write_digital(sens)
-    pin1.write_analog(vitesse)
+    pin8.write_digital(direction)
+    pin1.write_analog(speed)
 
 def commande_mot2(direction, speed):
-    pin12.write_digital(sens)
-    pin2.write_analog(vitesse)
+    pin12.write_digital(direction)
+    pin2.write_analog(speed)
 
 def forward():
     commande_mot1(0, 512)
