@@ -9,11 +9,11 @@ from microbit import *
 
 display.off()
 
-def commande_mot1(sens, vitesse):
+def commande_mot1(direction, speed):
     pin8.write_digital(sens)
     pin1.write_analog(vitesse)
 
-def commande_mot2(sens, vitesse):
+def commande_mot2(direction, speed):
     pin12.write_digital(sens)
     pin2.write_analog(vitesse)
 
