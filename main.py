@@ -36,17 +36,14 @@ def forward():
     command_mot1(0, 1023)
     command_mot2(1, 1023)
 
-
 def stop():
     command_mot1(0, 0)
     command_mot2(1, 0)
 
-
 def left():
     command_mot1(0, 1023)
     command_mot2(1, 0)
-
-
+    
 def right():
     command_mot1(0, 0)
     command_mot2(1, 1023)
@@ -85,3 +82,5 @@ pause(2000)
 right_test(100)
 pause(2000)
 left_test(100)
+
+
