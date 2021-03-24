@@ -5,11 +5,16 @@
 #   edited before use           #
 #################################
 from microbit import *
+
+#For test purpose
+
 from basic import pause
 from motorbit import forward as forward_test
 from motorbit import back as back_test
 from motorbit import right as left_test
 from motorbit import left as right_test
+
+#End what is needed for the test
 
 seconds_launch = 0
 seconds = 0
